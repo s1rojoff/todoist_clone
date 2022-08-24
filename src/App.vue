@@ -1,9 +1,10 @@
 <script setup>
+import HeaderMain from './components/HomePage/Header/HeaderMain.vue';
 </script>
 
 <template>
   <div>
-    <p class="text-red-500"></p>
+    <HeaderMain/>
   </div>
 </template>
 
