@@ -6,7 +6,7 @@
     height="32"
     width="127"
     xmlns="http://www.w3.org/2000/svg"
-    class="VaTmTfAskY3Qi32pPFXh7"
+    class="VaTmTfAskY3Qi32pPFXh7 cursor-pointer"
   >
     <mask id="td-logo-wordmark_svg__a" fill="#fff">
       <path d="M0 0h32.042v32H0z" fill-rule="evenodd"></path>
