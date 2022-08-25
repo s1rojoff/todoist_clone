@@ -1,6 +1,6 @@
 <script setup>
 import { useAttrs } from "vue";
-const attrs = useAttrs()
+const attrs = useAttrs();
 </script>
 
 <template>
@@ -16,6 +16,6 @@ const attrs = useAttrs()
       hover:bg-red-500
     "
   >
-    <slot> Start for free </slot>
+    Start for free
   </button>
 </template>
