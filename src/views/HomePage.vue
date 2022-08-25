@@ -5,6 +5,8 @@ import MainContent from '../components/HomePage/HomeContent/MainContent.vue';
 </script>
 
 <template>
+<div class="overflow-x-hidden">
     <HeaderMain/>
     <MainContent/>
+</div>
 </template>
