@@ -1,12 +1,16 @@
 <script setup>
 import HeaderMain from '../components/HomePage/Header/HeaderMain.vue';
 import MainContent from '../components/HomePage/HomeContent/MainContent.vue';
+import FooterMain from '../components/HomePage/Footer/FooterMain.vue';
 
 </script>
 
 <template>
-<div class="overflow-x-hidden">
+<div>
     <HeaderMain/>
-    <MainContent/>
+    <router-view>
+        <MainContent/>
+    </router-view>
+    <FooterMain/>
 </div>
 </template>

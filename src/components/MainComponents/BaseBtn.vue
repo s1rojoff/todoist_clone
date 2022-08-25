@@ -16,6 +16,6 @@ const attrs = useAttrs();
       hover:bg-red-500
     "
   >
-    Start for free
+    <slot>Start for free</slot>
   </button>
 </template>

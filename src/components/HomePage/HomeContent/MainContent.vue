@@ -4,7 +4,6 @@ import SecondSection from "./SecondSection.vue";
 import ThirdSection from "./ThirdSection.vue";
 import FouthSection from "./FouthSection.vue";
 import FifthSection from "./FifthSection.vue";
-import FooterMain from "../Footer/FooterMain.vue";
 </script>
 
 <template>
@@ -14,6 +13,5 @@ import FooterMain from "../Footer/FooterMain.vue";
     <ThirdSection />
     <FouthSection />
     <FifthSection/>
-    <FooterMain/>
   </div>
 </template>
