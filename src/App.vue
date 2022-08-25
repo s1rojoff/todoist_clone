@@ -5,8 +5,7 @@ import HomePage from "./views/HomePage.vue";
 
 <template>
   <div>
-    <HomePage />
-    <!-- <features-main></features-main> -->
+    <router-view></router-view>
   </div>
 </template>
 
