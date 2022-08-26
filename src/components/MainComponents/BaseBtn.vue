@@ -8,7 +8,7 @@ const attrs = useAttrs();
     v-bind="attrs"
     class="
       text-lg
-      md:pt-2 md:ml-2 md:pb-2 md:pl-4 md:pr-4
+      md:pt-2 md:pb-2 md:pl-4 md:pr-4
       rounded-lg
       font-semibold
       text-white
