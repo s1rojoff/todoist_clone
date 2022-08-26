@@ -11,7 +11,6 @@ const attrs = useAttrs()
       rounded-xl
       hover:bg-gray-200
       transition-all
-      md:w-[30%]
       flex
       items-center
       md:pl-24 md:pt-2.5 md:pb-2.5

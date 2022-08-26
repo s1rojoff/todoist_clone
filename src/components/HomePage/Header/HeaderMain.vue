@@ -8,7 +8,7 @@ const {toSection} = main()
 const items = ref([
   "Features",
   "Templates",
-  "For Teams",
+  "ForTeams",
   "Resources",
   "Pricing",
 ]);
@@ -21,8 +21,8 @@ const items = ref([
       <NavItem v-for="item in items" :key="item" @click="toSection(`/${item}`)">{{ item }}</NavItem>
     </div>
     <div class="flex items-center md:mt-1.5 md:mr-3">
-      <NavItem>Log in</NavItem>
-      <BaseBtn />
+      <NavItem @click="toSection('/auth/login')">Log in</NavItem>
+      <BaseBtn  class="md:ml-2" @click="toSection('/auth/signup')"/>
     </div>
   </div>
 </template>
