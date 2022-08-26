@@ -19,5 +19,6 @@ let {toSection} = main()
         <BaseBtn @click="toSection('/')" class="mt-5 md:pl-6 md:pr-6 md:pt-1.5 md:pb-1.5">Home</BaseBtn>
     </div>
     <FooterMain/>
+    <div></div>
   </div>
 </template>
