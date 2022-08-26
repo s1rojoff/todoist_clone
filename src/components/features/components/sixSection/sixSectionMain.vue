@@ -10,7 +10,7 @@ const store = useStore();
 const Src = [
   "public/img/mails.webp",
   "public/img/comments.webp",
-  "public/img/calendar.webp"
+  "public/img/calendar.webp",
 ];
 function replaceSrc() {
   if (store.$state.desc13) {
@@ -23,17 +23,16 @@ function replaceSrc() {
     return Src[2];
   }
 }
-function descriptionShow(arg1, arg2,arg3) {
+function descriptionShow(arg1, arg2, arg3) {
   store.$state.desc13 = arg1;
   store.$state.desc14 = arg2;
   store.$state.desc15 = arg3;
-
 }
 </script>
   <template>
   <section class="w-full mt-20 flex justify-center">
     <div class="w-[80%] flex justify-between">
-      <div class=" w-[700px] bg-phone">
+      <div class="w-[700px] bg-phone">
         <img :src="replaceSrc()" alt="" />
       </div>
       <div class="w-[400px] mr-[100px]">
@@ -41,17 +40,18 @@ function descriptionShow(arg1, arg2,arg3) {
           <second-sec-text>
             <template #title>
               <h1 class="leading-[50px]">
-               Centralize all your work in one place
+                Centralize all your work in one place
               </h1>
             </template>
             <template #description>
-             Simplify your workflow by connecting Todoist to your email, calendar, and files.
+              Simplify your workflow by connecting Todoist to your email,
+              calendar, and files.
             </template>
           </second-sec-text>
         </div>
         <div
           class="mb-3 rounded-xl"
-          @click="descriptionShow(true, false,false)"
+          @click="descriptionShow(true, false, false)"
         >
           <select-item
             :className="store.$state.desc13 ? 'bg-red-100' : 'bg-gray-100'"
@@ -69,7 +69,7 @@ function descriptionShow(arg1, arg2,arg3) {
         </div>
         <div
           class="mb-3 rounded-xl"
-          @click="descriptionShow(false, true,false)"
+          @click="descriptionShow(false, true, false)"
         >
           <select-item
             :className="store.$state.desc14 ? 'bg-red-100' : 'bg-gray-100'"
@@ -87,18 +87,18 @@ function descriptionShow(arg1, arg2,arg3) {
         </div>
         <div
           class="mb-3 rounded-xl"
-          @click="descriptionShow(false,false, true)"
+          @click="descriptionShow(false, false, true)"
         >
           <select-item
             :className="store.$state.desc15 ? 'bg-red-100' : 'bg-gray-100'"
           >
             <template #svg>
-             <calendar-svg></calendar-svg>
+              <calendar-svg></calendar-svg>
             </template>
             <template #title>Calendar feeds </template>
             <template #description>
               <p v-show="store.$state.desc15">
-               display your scheduled tasks inside your calendar of choice.
+                display your scheduled tasks inside your calendar of choice.
               </p>
             </template>
           </select-item>
