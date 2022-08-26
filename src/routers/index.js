@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "../views/HomePage.vue";
-import MainContent from "../components/HomePage/HomeContent/MainContent.vue";
-import AuthPage from '../views/AuthPage.vue'
+import HelperPage from '../views/HelperPage.vue'
+import AuthSignUp from '../views/AuthSignUp.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -12,7 +12,12 @@ const router = createRouter({
     },
     {
         path:'/auth',
-        component: AuthPage
+        component: HelperPage
+    },
+    {
+      path: '/auth/signup',
+      component: AuthSignUp
+
     }
   ],
 });
