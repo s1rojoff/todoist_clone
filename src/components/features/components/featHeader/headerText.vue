@@ -1,10 +1,8 @@
 <script setup>
 </script>
 <template>
-  <section>
-    <div>
-      <div>
-        <div class="w-[550px] text-center" >
+      <div class="my-0 mx-auto">
+        <div class="w-[550px] text-center mb-4" >
           <h1 class="font-bold text-6xl">From overwhelmed to on top of it</h1>
         </div>
         <div class="w-[550px] text-center">
@@ -15,6 +13,4 @@
           </p>
         </div>
       </div>
-    </div>
-  </section>
 </template>
