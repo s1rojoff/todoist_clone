@@ -6,5 +6,5 @@ import FooterMain from '../components/HomePage/Footer/FooterMain.vue';
 <template>
     <HeaderMain/>
     <features-main/>
-    <FooterMain/>
+    <FooterMain className="bg-slate-200"></FooterMain>
 </template>

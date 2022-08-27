@@ -18,6 +18,10 @@ export const useStore = defineStore("store", {
       desc13 : true,
       desc14 : false,
       desc15 : false,
+      isActive1 : false, 
+      isActive2 : true, 
+      isActive3 : false, 
+      isActive4 : false, 
     };
   },
 })
