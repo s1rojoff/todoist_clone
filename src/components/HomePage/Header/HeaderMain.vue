@@ -5,6 +5,7 @@ import NavItem from "./NavItem.vue";
 import BaseBtn from "../../MainComponents/BaseBtn.vue";
 import main from '../../../js/VueRouter.js'
 const {toSection} = main()
+const div  =ref()
 const items = ref([
   "Features",
   "Templates",
@@ -16,7 +17,7 @@ const items = ref([
 
 <template>
   <div class="flex items-center w-full z-50 justify-between md:pl-32 md:pr-32 md:pt-1 bg-white md:pb-3 fixed">
-    <div class="flex items-center md:mt-2">
+    <div ref="div" class="flex items-center md:mt-2">
       <Logo />
       <NavItem v-for="item in items" :key="item" @click="toSection(`/${item}`)">{{ item }}</NavItem>
     </div>

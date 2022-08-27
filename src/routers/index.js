@@ -4,6 +4,7 @@ import HelperPage from '../views/HelperPage.vue'
 import AuthSignUp from '../views/AuthSignUp.vue'
 import AuthLoginPage from '../views/AuthLoginPage.vue'
 import featuresPage from '../views/featuresPage.vue'
+import OnBoardPage from '../views/OnBoardPage.vue'
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -26,6 +27,10 @@ const router = createRouter({
     {
       path: '/auth/login',
       component: AuthLoginPage
+    },
+    {
+      path:'/app/onboard/use-case',
+      component: OnBoardPage
     }
   ],
 });
