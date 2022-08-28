@@ -8,6 +8,7 @@
     class="
     top-0
     left-0
+    z-[60]
       w-full
       h-[100vh]
       bg-black

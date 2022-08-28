@@ -12,6 +12,8 @@ import Filters from '../views/Filters.vue'
 import OnBoardPage from '../views/OnBoardPage.vue'
 const router = createRouter({
   history: createWebHistory(),
+  linkActiveClass: 'active-link',
+  linkExactActiveClass: 'exact-active-link',
   routes: [
     {
       path: "/",
@@ -19,11 +21,11 @@ const router = createRouter({
     },
     {
       path: "/features",
-      component : featuresPage
+      component: featuresPage
     },
     {
-        path:'/auth',
-        component: HelperPage
+      path: '/auth',
+      component: HelperPage
     },
     {
       path: '/auth/signup',
