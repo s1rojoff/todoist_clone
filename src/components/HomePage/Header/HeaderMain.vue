@@ -5,6 +5,7 @@ import NavItem from "./NavItem.vue";
 import BaseBtn from "../../MainComponents/BaseBtn.vue";
 import main from '../../../js/VueRouter.js'
 const {toSection} = main()
+const div  =ref()
 const items = ref([
   "Features",
   "Templates",

@@ -9,6 +9,7 @@ import Inbox from '../views/InboxPage.vue'
 import Today from '../views/Today.vue'
 import Upcoming from '../views/Upcoming.vue'
 import Filters from '../views/Filters.vue'
+import OnBoardPage from '../views/OnBoardPage.vue'
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -53,6 +54,10 @@ const router = createRouter({
           component : Filters
         }
       ]
+    },
+    {
+      path:'/app/onboard/use-case',
+      component: OnBoardPage
     }
   ],
 });
