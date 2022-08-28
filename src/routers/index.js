@@ -60,6 +60,10 @@ const router = createRouter({
     {
       path:'/app/onboard/use-case',
       component: OnBoardPage
+    },
+    {
+      path:'/today',
+      component: AppPage
     }
   ],
 });

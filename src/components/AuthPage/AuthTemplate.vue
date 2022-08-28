@@ -9,6 +9,9 @@ import EyeSlashSvg from "./Svgs/EyeSlashSvg.vue";
 import { ref } from "vue";
 import BaseBtn from "../MainComponents/BaseBtn.vue";
 let changeType = ref(false);
+
+import main from "../../js/VueRouter.js";
+const {toSection} = main()
 </script>
 <template>
   <div class="mb-20 flex items-center ml-60">
@@ -17,7 +20,7 @@ let changeType = ref(false);
       <p class="text-3xl font-bold md:mt-32">
         <slot name="authSelect"></slot>
       </p>
-      <SelectAcc class="md:mt-10">
+      <SelectAcc class="md:mt-10" @click="toSection('/today')">
         <template #logo>
           <GoogleSvg />
         </template>
