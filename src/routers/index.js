@@ -34,6 +34,32 @@ const router = createRouter({
     {
       path: '/auth/login',
       component: AuthLoginPage
+    },
+    {
+      path : '/app',
+      component : AppPage,
+      children: [
+        {
+          path :'/project',
+          component : Inbox  
+        },
+        {
+          path : '/today',
+          component : Today
+        },
+        {
+          path : '/upcoming',
+          component : Upcoming
+        },
+        {
+          path : '/filters',
+          component : Filters
+        }
+      ]
+    },
+    {
+      path:'/app/onboard/use-case',
+      component: OnBoardPage
     }
   ],
 });
