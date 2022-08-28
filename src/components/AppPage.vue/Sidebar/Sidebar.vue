@@ -8,7 +8,7 @@ import FilterSvg from "./Svg/filterSvg.vue";
 </script>
 <template>
   <div class="pl-8 pt-8 w-[300px] h-[100vh] bg-gray-100">
-    <router-link to="project">
+    <router-link active-class="active-link" exact-active-class="exact-active-link" to="project">
       <sidebar-item width="w-[200px]">
         <template #svg>
           <div class="text-blue-500">
@@ -21,8 +21,8 @@ import FilterSvg from "./Svg/filterSvg.vue";
           <letter-helper>i</letter-helper>
         </template>
       </sidebar-item>
-    </router-link>
-    <router-link to="today">
+    </router-link >
+    <router-link active-class="active-link" exact-active-class="exact-active-link" to="today">
       <sidebar-item width="w-[200px]">
         <template #svg>
           <div class="text-green-500">
@@ -36,7 +36,7 @@ import FilterSvg from "./Svg/filterSvg.vue";
         </template>
       </sidebar-item>
     </router-link>
-    <router-link to="upcoming">
+    <router-link active-class="active-link" exact-active-class="exact-active-link" to="upcoming">
       <sidebar-item width="w-[200px]">
         <template #svg>
           <div class="text-purple-700">
@@ -50,7 +50,7 @@ import FilterSvg from "./Svg/filterSvg.vue";
         </template>
       </sidebar-item>
     </router-link>
-    <router-link to="filters">
+    <router-link active-class="active-link" exact-active-class="exact-active-link" to="filters">
       <sidebar-item width="w-[200px]">
         <template #svg>
           <div class="text-yellow-500">
@@ -66,3 +66,12 @@ import FilterSvg from "./Svg/filterSvg.vue";
     </router-link>
   </div>
 </template>
+<style>
+      .active {
+    background-color: rgb(214, 215, 215);
+}
+
+.exact-active-link {
+    background-color: rgb(243 244 246);
+}
+</style>
