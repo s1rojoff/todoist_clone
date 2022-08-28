@@ -9,8 +9,11 @@ import Inbox from '../views/InboxPage.vue'
 import Today from '../views/Today.vue'
 import Upcoming from '../views/Upcoming.vue'
 import Filters from '../views/Filters.vue'
+import OnBoardPage from '../views/OnBoardPage.vue'
 const router = createRouter({
   history: createWebHistory(),
+  linkActiveClass: 'active-link',
+  linkExactActiveClass: 'exact-active-link',
   routes: [
     {
       path: "/",
@@ -18,11 +21,11 @@ const router = createRouter({
     },
     {
       path: "/features",
-      component : featuresPage
+      component: featuresPage
     },
     {
-        path:'/auth',
-        component: HelperPage
+      path: '/auth',
+      component: HelperPage
     },
     {
       path: '/auth/signup',
@@ -31,28 +34,6 @@ const router = createRouter({
     {
       path: '/auth/login',
       component: AuthLoginPage
-    },
-    {
-      path : '/app',
-      component : AppPage,
-      children: [
-        {
-          path :'/project',
-          component : Inbox  
-        },
-        {
-          path : '/today',
-          component : Today
-        },
-        {
-          path : '/upcoming',
-          component : Upcoming
-        },
-        {
-          path : '/filters',
-          component : Filters
-        }
-      ]
     }
   ],
 });
