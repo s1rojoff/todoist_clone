@@ -12,6 +12,7 @@ const attrs = useAttrs()
       hover:bg-gray-200
       transition-all
       flex
+      cursor-pointer
       items-center
       md:pl-24 md:pt-2.5 md:pb-2.5
     "

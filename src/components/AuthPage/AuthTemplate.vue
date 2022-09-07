@@ -6,11 +6,10 @@ import FacebookSvg from "./Svgs/FacebookSvg.vue";
 import AppleSvg from "./Svgs/AppleSvg.vue";
 import EyeSvg from "./Svgs/EyeSvg.vue";
 import EyeSlashSvg from "./Svgs/EyeSlashSvg.vue";
+import main from '../../js/VueRouter.js'
 import { ref } from "vue";
 import BaseBtn from "../MainComponents/BaseBtn.vue";
 let changeType = ref(false);
-
-import main from "../../js/VueRouter.js";
 const {toSection} = main()
 </script>
 <template>
