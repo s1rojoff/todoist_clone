@@ -1,12 +1,12 @@
 <script setup>
 import { ref } from "vue";
 import {useStore} from '../../store'
-const store = useStore()
 import Logo from "../HomePage/Header/Logo.vue";
 import SelectCard from "./SelectCard.vue";
 import LabelSvg from "../features/components/firthSection/Svg/labelSvg.vue";
 import ActiveBtn from "./ActiveBtn.vue";
 import DisableBtn from "./DisableBtn.vue";
+const store = useStore()
 const cards = [
   {
     scr: "../../../public/img/onboard-personal.png",

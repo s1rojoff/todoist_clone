@@ -1,5 +1,5 @@
-<script setup></script>
+<script setup>
+import TodayMain from '../components/TodayPage/TodayMain.vue';</script>
 <template>
-
-<h1 class="text-7xl">This is Today</h1>
+<TodayMain/>
 </template>
