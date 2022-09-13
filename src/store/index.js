@@ -18,7 +18,9 @@ export const useStore = defineStore("store", {
       desc13 : true,
       desc14 : false,
       desc15 : false,
-      selectChecked: false
+      selectChecked: false,
+      todayView: false,
+      taskSection: false
     };
   },
 })

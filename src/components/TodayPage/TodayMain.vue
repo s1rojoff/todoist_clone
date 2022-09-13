@@ -1,14 +1,20 @@
 <script setup>
-import TodayHeader from './todayHeader.vue';
-import TodayBody from './todayBody.vue';
-import TodayFooter from './todayFooter.vue';
+    import {useStore} from "../../store";
+    import TodayHeader from './todayHeader.vue';
+    import TodayBody from './todayBody.vue';
+    import TodayFooter from './todayFooter.vue';
+    import ViewActions from './ViewActions.vue';
+    const  store = useStore()
 
 </script>
 
 <template>
     <div class="w-full">
-        <TodayHeader class="z-10"/>
-        <TodayBody/>
-        <TodayFooter/>
+        <TodayHeader/>
+        <ViewActions v-show="store.todayView"/>
+        <div v-show="!store.taskSection">
+            <TodayBody/>
+            <TodayFooter/>
+        </div>
     </div>
 </template>
