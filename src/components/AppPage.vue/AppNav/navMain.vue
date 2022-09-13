@@ -87,7 +87,7 @@ import NavInput from "./navInput.vue";
             <svg-btn width="w-[220px] translate-x-[-170px]">
               <template #svg>
                 <img
-                  src="public/img/apps-illustrations.webp"
+                  src="../../../../public/img/apps-illustrations.webp"
                   alt=""
                   class="w-9 rounded-full"
                 />
