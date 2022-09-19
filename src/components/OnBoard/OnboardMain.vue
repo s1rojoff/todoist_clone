@@ -62,8 +62,8 @@ const cards = [
       </p>
     </div>
     <div class="flex justify-center md:mt-10">
-      <DisableBtn v-show="!store.selectChecked"/>
-      <ActiveBtn v-show="store.selectChecked"/>
+      <DisableBtn v-show="!store.selectChecked">Continue</DisableBtn>
+      <ActiveBtn v-show="store.selectChecked">Continue</ActiveBtn>
     </div>
   </div>
 </template>

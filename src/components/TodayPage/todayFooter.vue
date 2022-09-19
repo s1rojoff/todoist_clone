@@ -1,5 +1,5 @@
 <script setup>
-import SoroqSvg from "./SoroqSvg.vue";
+import SoroqSvg from "./Svgs/SoroqSvg.vue";
 </script>
 <template>
   <div class="flex justify-center md:mt-5">
