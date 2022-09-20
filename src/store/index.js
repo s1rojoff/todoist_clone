@@ -20,7 +20,9 @@ export const useStore = defineStore("store", {
       desc15 : false,
       selectChecked: false,
       todayView: false,
-      taskSection: false
+      taskSection: false,
+      todayTask: '',
+      todayTasks : []
     };
   },
 })
