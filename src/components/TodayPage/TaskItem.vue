@@ -6,7 +6,6 @@
     import MoreAction from './Svgs/MoreAction.vue'
     import SvgBtn from '../MainComponents/SvgBtn.vue'
     let hoverAction = ref(false)
-
     function editItem() {
         console.log('js')
     }
