@@ -6,6 +6,9 @@
     import MoreAction from './Svgs/MoreAction.vue'
     import SvgBtn from '../MainComponents/SvgBtn.vue'
     let hoverAction = ref(false)
+    function editItem() {
+        console.log('js')
+    }
 </script>
 <template>
     <div class="mb-2 md:mt-2">
@@ -15,7 +18,7 @@
                 <span class="md:ml-2"><slot></slot></span>
             </div>
             <div class="flex items-center" v-show="hoverAction">
-                <EditSvg/>
+                <EditSvg @click="editItem"/>
                 <DateSvg class="md:ml-1"/>
                 <CommentSvg class="md:ml-1" />
                 <MoreAction class="md:ml-1.5" />
