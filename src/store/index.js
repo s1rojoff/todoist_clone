@@ -22,7 +22,9 @@ export const useStore = defineStore("store", {
       todayView: false,
       taskSection: false,
       todayTask: '',
-      todayTasks : []
+      todayTasks : [],
+      taskIndex : '',
+      taskCount  : ''
     };
   },
 })
