@@ -1,4 +1,5 @@
 <script setup>
+    import {ref} from 'vue'
     import hoverBtn from './hoverBtn.vue'
     import TodaySvg from './Svgs/TodaySvg.vue'
     import InboxSvg from './Svgs/InboxSvg.vue'
@@ -15,7 +16,6 @@
         store.todayTask = '';
         store.taskSection = !store.taskSection;
     }
-
     function addTask() {
         if(store.todayTask){
             store.todayTasks.push(store.todayTask);
@@ -30,17 +30,19 @@
         <input type="text" class="font-thin text-sm" placeholder="Description">
         <div class="flex items-center md:mt-5 justify-between">
             <div class="flex items-center">
-                <SvgBtn>
-                    <template #svg>
-                        <hoverBtn>
-                            <TodaySvg/>
-                            <p class="text-green-700 md:ml-0.5 text-sm">Today</p>
-                        </hoverBtn>
-                    </template>
-                    <template #title>
-                        Today
-                    </template>
-                </SvgBtn>
+                <div>
+                    <SvgBtn>
+                        <template #svg>
+                            <hoverBtn>
+                                <TodaySvg/>
+                                <p class="text-green-700 md:ml-0.5 text-sm">Today</p>
+                            </hoverBtn>
+                        </template>
+                        <template #title>
+                            Today
+                        </template>
+                    </SvgBtn>
+                </div>
                 <SvgBtn width="md:w-32">
                     <template #svg>
                         <hoverBtn class="md:ml-2">

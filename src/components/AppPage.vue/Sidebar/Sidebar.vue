@@ -5,6 +5,13 @@ import letterHelper from "../../MainComponents/letterHelper.vue";
 import TodaySvg from "./Svg/todaySvg.vue";
 import UpcomingSvg from "./Svg/upcomingSvg.vue";
 import FilterSvg from "./Svg/filterSvg.vue";
+import {useStore} from "../../../store";
+const store = useStore();
+function returnTaskCount() {
+  if(store.todayTasks.length > 0){
+    return store.todayTasks.length
+  }
+}
 </script>
 <template>
   <div class="pl-8 pt-8 w-[300px] h-[100vh] bg-gray-100">
@@ -34,6 +41,7 @@ import FilterSvg from "./Svg/filterSvg.vue";
           Go to Today <letter-helper>G</letter-helper> then
           <letter-helper>T</letter-helper>
         </template>
+        <template #taskCount>{{returnTaskCount()}}</template>
       </sidebar-item>
     </router-link>
     <router-link active-class="active-link" exact-active-class="exact-active-link" to="upcoming">
