@@ -14,7 +14,7 @@
 <template>
     <bodyAddTask/>
     <div v-show="store.inbox_taskName">
-        <AddSection @click="store.inbox_taskName = false"/>
+        <AddSection class="add-section" @click="store.inbox_taskName = false"/>
         <div class="flex justify-center">
             <MainPageImg class="md:w-1/4"/>
         </div>
@@ -35,9 +35,19 @@
             <ActiveAdd :class="[store.inbox_tasksSecName ? 'bg-red-600' : 'bg-red-200']" class="text-white">
                 Add section
             </ActiveAdd>
-            <ActiveAdd class="hover:bg-gray-100 md:ml-1">
+            <ActiveAdd class="hover:bg-gray-100 md:ml-1" @click="store.inbox_taskName = true">
                 Cancel
             </ActiveAdd>
         </div>
     </div>
 </template>
+
+<style scoped>
+    .add-section{
+        opacity: 0;
+    }
+    .add-section:hover{
+        opacity: 1;
+        transition: all 0.2s ease;
+    }
+</style>
