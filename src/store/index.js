@@ -24,7 +24,9 @@ export const useStore = defineStore("store", {
       todayTask: '',
       todayTasks : [],
       taskIndex : '',
-      taskCount  : ''
+      taskCount  : '',
+      inbox_taskName: true,
+      inbox_tasksSecName: ''
     };
   },
 })
