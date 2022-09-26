@@ -27,6 +27,7 @@ let rotateSvg = ref(false);
           <template #title>Add project</template>
           <template #svg>
             <div
+            @click="store.$state.showModal = true"
               v-show="store.$state.showPlusSvg"
               class="
                 text-gray-700

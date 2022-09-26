@@ -11,7 +11,7 @@ import { useStore } from "../../../store";
 const store = useStore()
 </script>
 <template>
-  <div class="pl-8 pt-8 w-[300px] h-[100vh] bg-gray-100 "
+  <div class="pl-8 pt-8 w-[300px] h-[92.5 vh] bg-gray-100 "
   @mouseenter="store.$state.showPlusSvg=true"
   @mouseleave="store.$state.showPlusSvg=false"
   >

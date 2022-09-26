@@ -7,7 +7,7 @@ defineEmits(["update:modelValue"]);
     
     <template>
   <input
-    v-bind="attrs"
+    v-bind="$attrs"
     :value="modelValue"
     @input="$emit('update:modelValue', $event.target.value)"
   />
