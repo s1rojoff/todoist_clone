@@ -132,7 +132,14 @@ export const useStore = defineStore("store", {
       taskIndex : '',
       taskCount  : '',
       inbox_taskName: true,
-      inbox_tasksSecName: ''
+      inbox_tasksSecName: '',
+      rotateSvg: false,
+      secInboxTask : '',
+      inboxSecTasks: [],
+      inboxSecTask :{
+        task: '',
+        description: ''
+      }
     };
   },
 })
