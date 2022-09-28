@@ -40,19 +40,19 @@ const router = createRouter({
       component : AppPage,
       children: [
         {
-          path :'/project',
+          path :'project',
           component : Inbox  
         },
         {
-          path : '/today',
+          path : 'today',
           component : Today
         },
         {
-          path : '/upcoming',
+          path : 'upcoming',
           component : Upcoming
         },
         {
-          path : '/filters',
+          path : 'filters',
           component : Filters
         }
       ]

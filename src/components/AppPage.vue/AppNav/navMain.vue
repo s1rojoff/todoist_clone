@@ -10,12 +10,23 @@ import letterHelper from "../../MainComponents/letterHelper.vue";
 import HomePage from "../../../views/HomePage.vue";
 import PlusSvg from "./Svg/plusSvg.vue";
 import NavInput from "./navInput.vue";
+import { useStore } from "../../../store";
+import { ref } from "@vue/reactivity";
+const store = useStore()
+const ClickM = ref("")
+
+function keyboardEvent (e) {
+    if (e.keyCode === 77) {
+      store.$state.showSidebar = !store.$state.showSidebar
+    }
+  }
+  window.addEventListener('keyup', keyboardEvent)
 </script>
 <template>
   <nav>
     <div class="w-full px-14 py-2 bg-red-600 flex justify-between">
       <div class="flex">
-        <div class="mr-2">
+        <div ref="ClickM" class="mr-2 ">
           <svg-btn width="w-[100px]">
             <template #svg>
               <menu-svg />
@@ -87,7 +98,7 @@ import NavInput from "./navInput.vue";
             <svg-btn width="w-[220px] translate-x-[-170px]">
               <template #svg>
                 <img
-                  src="public/img/apps-illustrations.webp"
+                  src="../../../../public/img/apps-illustrations.webp"
                   alt=""
                   class="w-9 rounded-full"
                 />

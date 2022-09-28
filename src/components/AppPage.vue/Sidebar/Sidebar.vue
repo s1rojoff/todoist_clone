@@ -5,7 +5,9 @@ import letterHelper from "../../MainComponents/letterHelper.vue";
 import TodaySvg from "./Svg/todaySvg.vue";
 import UpcomingSvg from "./Svg/upcomingSvg.vue";
 import FilterSvg from "./Svg/filterSvg.vue";
-import {useStore} from "../../../store";
+import projectMain from "./Project/projectMain.vue";
+import modalMain from "./Project/ProjectModal/modalMain.vue";
+import { useStore } from "../../../store";
 const store = useStore();
 function returnTaskCount() {
   if(store.todayTasks.length > 0){
@@ -14,7 +16,10 @@ function returnTaskCount() {
 }
 </script>
 <template>
-  <div class="pl-8 pt-8 w-[300px] h-[100vh] bg-gray-100">
+  <div class="pl-8 pt-8 w-[300px] h-[92.5 vh] bg-gray-100 "
+  @mouseenter="store.$state.showPlusSvg=true"
+  @mouseleave="store.$state.showPlusSvg=false"
+  >
     <router-link active-class="active-link" exact-active-class="exact-active-link" to="project">
       <sidebar-item width="w-[200px]">
         <template #svg>
@@ -72,6 +77,12 @@ function returnTaskCount() {
         </template>
       </sidebar-item>
     </router-link>
+    <div class="mt-5">
+      <project-main></project-main>
+    </div>
+    <div>
+        <modal-main></modal-main>
+    </div>
   </div>
 </template>
 <style>
