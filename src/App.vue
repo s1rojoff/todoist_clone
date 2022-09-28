@@ -8,6 +8,5 @@ import HomePage from "./views/HomePage.vue";
     <router-view></router-view>
   </div>
 </template>
-
 <style scoped>
 </style>
