@@ -4,6 +4,7 @@
     import TodayBody from './todayBody.vue';
     import TodayFooter from './todayFooter.vue';
     import ViewActions from './ViewActions.vue';
+import TasksSec from "./TasksSec.vue";
     const  store = useStore()
 
 </script>
@@ -16,5 +17,6 @@
             <TodayBody/>
             <TodayFooter/>
         </div>
+        <TasksSec v-show="store.taskSection"/>
     </div>
 </template>

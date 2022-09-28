@@ -8,7 +8,12 @@ import FilterSvg from "./Svg/filterSvg.vue";
 import projectMain from "./Project/projectMain.vue";
 import modalMain from "./Project/ProjectModal/modalMain.vue";
 import { useStore } from "../../../store";
-const store = useStore()
+const store = useStore();
+function returnTaskCount() {
+  if(store.todayTasks.length > 0){
+    return store.todayTasks.length
+  }
+}
 </script>
 <template>
   <div class="pl-8 pt-8 w-[300px] h-[92.5 vh] bg-gray-100 "
@@ -41,6 +46,7 @@ const store = useStore()
           Go to Today <letter-helper>G</letter-helper> then
           <letter-helper>T</letter-helper>
         </template>
+        <template #taskCount>{{returnTaskCount()}}</template>
       </sidebar-item>
     </router-link>
     <router-link active-class="active-link" exact-active-class="exact-active-link" to="upcoming">

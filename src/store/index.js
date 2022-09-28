@@ -127,6 +127,12 @@ export const useStore = defineStore("store", {
           Name: "Taupe",
         },
       ],
+      todayTask: '',
+      todayTasks : [],
+      taskIndex : '',
+      taskCount  : '',
+      inbox_taskName: true,
+      inbox_tasksSecName: ''
     };
   },
 })
