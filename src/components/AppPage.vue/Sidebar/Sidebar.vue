@@ -21,7 +21,7 @@ function returnTaskCount() {
   @mouseleave="store.$state.showPlusSvg=false"
   >
     <router-link active-class="active-link" exact-active-class="exact-active-link" to="project">
-      <sidebar-item width="w-[200px]">
+      <sidebar-item width="w-[200px] translate-x-[100px]">
         <template #svg>
           <div class="text-blue-500">
             <inbox-svg></inbox-svg>
@@ -35,7 +35,7 @@ function returnTaskCount() {
       </sidebar-item>
     </router-link >
     <router-link active-class="active-link" exact-active-class="exact-active-link" to="today">
-      <sidebar-item width="w-[200px]">
+      <sidebar-item width="w-[200px] translate-x-[100px]">
         <template #svg>
           <div class="text-green-500">
             <TodaySvg />
@@ -49,8 +49,8 @@ function returnTaskCount() {
         <template #taskCount>{{returnTaskCount()}}</template>
       </sidebar-item>
     </router-link>
-    <router-link active-class="active-link" exact-active-class="exact-active-link" to="upcoming">
-      <sidebar-item width="w-[200px]">
+    <router-link  to="upcoming">
+      <sidebar-item width="w-[200px] translate-x-[80px]">
         <template #svg>
           <div class="text-purple-700">
             <UpcomingSvg />
@@ -64,7 +64,7 @@ function returnTaskCount() {
       </sidebar-item>
     </router-link>
     <router-link active-class="active-link" exact-active-class="exact-active-link" to="filters">
-      <sidebar-item width="w-[200px]">
+      <sidebar-item width="w-[200px] translate-x-[70px]">
         <template #svg>
           <div class="text-yellow-500">
             <FilterSvg />
@@ -86,7 +86,7 @@ function returnTaskCount() {
   </div>
 </template>
 <style>
-      .active {
+      .active-link {
     background-color: rgb(214, 215, 215);
 }
 

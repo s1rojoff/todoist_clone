@@ -10,13 +10,12 @@ let rotateSvg = ref(false);
 </script>
 <template>
   <div >
-    <div class="flex justify-between">
+    <div class="flex justify-between h-[50px]">
       <div class="flex w-full" @click="rotateSvg = !rotateSvg">
         <div
-          class="mt-1 mr-3 transition-all"
-          :class="rotateSvg ? '' : 'rotate-[-90deg]'"
+          class="mt-1 mr-3"
         >
-          <down-svg></down-svg>
+          <down-svg class="transition-all" :class="rotateSvg ? '' : '-rotate-90'"></down-svg>
         </div>
         <div>
           <h1 class="font-bold">Projects</h1>
