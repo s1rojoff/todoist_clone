@@ -136,10 +136,8 @@ export const useStore = defineStore("store", {
       rotateSvg: false,
       secInboxTask : '',
       inboxSecTasks: [],
-      inboxSecTask :{
-        task: '',
-        description: ''
-      }
+        inboxSecTask_task: '',
+        inboxSecTask_description: ''
     };
   },
 })
