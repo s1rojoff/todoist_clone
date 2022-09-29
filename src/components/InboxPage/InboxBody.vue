@@ -8,7 +8,7 @@
     import ActiveAdd from '../MainComponents/ActiveAdd.vue'
     import SectionItem from './SectionItem.vue'
     import InboxTaskBoard from './InboxTaskBoard.vue'
-    import TaskItem from '../TodayPage/TaskItem.vue'
+    import InboxTaskItem from './InboxTaskItem.vue'
     import {useStore} from "../../store";
     const store = useStore();
     let taskSecName = ref('');
@@ -31,13 +31,22 @@
         }
     }
     function cancelInbox() {
-        console.log('cancel')
+
     }
     function addTaskInbox() {
-        if(store.inboxSecTask.task){
-            store.inboxSecTasks.push(store.inboxSecTask);
+        if(store.inboxSecTask_task && store.inboxSecTask_description){
+            let inboxSecTask ={
+                task: store.inboxSecTask_task,
+                description: store.inboxSecTask_description
+            };
+            store.inboxSecTasks.push(inboxSecTask);
         }
-        console.log(store.inboxSecTasks);
+        store.inboxSecTask_task = '';
+        store.inboxSecTask_description = '';
+        console.log(inboxSecTask);
+    }
+    function deleteItem(index) {
+        store.inboxSecTasks.splice(index, 1)
     }
 </script>
 
@@ -73,11 +82,11 @@
         <div v-if="secName">
             <SectionItem v-show="secName">{{secName}}</SectionItem>
             <bodyAddTask @click="showBoard" v-if="!showTaskBoard" class="md:ml-3 md:mt-3"/>
-            <TaskItem v-for="(task, index) in store.inboxSecTasks" :key="index">
+            <InboxTaskItem  class="md:ml-5" v-for="(task, index) in store.inboxSecTasks" :key="index" @deleteTask="deleteItem(index)">
                 {{task.task}} <br>
                 <p class="text-[11px] text-gray-500 -mt-1">{{task.description}}</p>
-            </TaskItem>
-            <InboxTaskBoard v-if="showTaskBoard" class="md:mt-3" @cancel="cancelInbox" @addTask="addTaskInbox"  v-model="inboxSecTask" :secName="`/${secName}`"/>
+            </InboxTaskItem>
+            <InboxTaskBoard v-if="showTaskBoard" class="md:mt-3" @cancel="showBoard" @addTask="addTaskInbox"  v-model="inboxSecTask" :secName="`/${secName}`"/>
         </div>
     </div>
 </template>
