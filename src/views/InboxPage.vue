@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+    import InboxMain from '../components/InboxPage/InboxMain.vue'
+</script>
 <template>
-<h1 class="text-7xl">This is Inbox</h1>
+    <InboxMain/>
 </template>

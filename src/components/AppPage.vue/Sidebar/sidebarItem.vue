@@ -4,7 +4,7 @@ let titleShow = ref(false);
 const props = defineProps(["width"]);
 </script>
 <template>
-  <div @mouseenter="titleShow = true" @mouseleave="titleShow = false" class="hover:bg-gray-200">
+  <div @mouseenter="titleShow = true" @mouseleave="titleShow = false" class="hover:bg-gray-200 flex items-center justify-between md:pr-4">
     <div class="mr-2 flex justify-between p-1 relative">
       <div class="flex">
         <div class="mt-1">
@@ -34,6 +34,7 @@ const props = defineProps(["width"]);
         </div>
       </transition>
     </div>
+    <p class="text-xs text-gray-500"><slot name="taskCount"></slot></p>
   </div>
 </template>
 <style scoped>

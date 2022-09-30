@@ -6,8 +6,8 @@ const props = defineProps(["width"]);
 <template>
   <div
     class="relative"
-    @mouseenter="titleShow = true"
-    @mouseleave="titleShow = false"
+    @mouseenter=" titleShow = true"
+    @mouseleave="titleShow = false "
   >
     <button
       class="
@@ -35,6 +35,7 @@ const props = defineProps(["width"]);
           top-[60%]
           left-[50%]
           translate-x-[-50%] translate-y-[50%]
+          z-50
         "
       >
         <span class="text-white text-xs">

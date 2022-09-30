@@ -1,33 +1,25 @@
 <script setup>
-    import {ref} from 'vue'
-    import hoverBtn from './hoverBtn.vue'
-    import TodaySvg from './Svgs/TodaySvg.vue'
-    import InboxSvg from './Svgs/InboxSvg.vue'
+    import {ref,defineProps,defineEmits,useAttrs} from 'vue'
+    import hoverBtn from '../TodayPage/hoverBtn.vue'
+    import TodaySvg from '../TodayPage/Svgs/TodaySvg.vue'
+    import InboxSvg from '../TodayPage/Svgs/InboxSvg.vue'
     import SvgBtn from '../MainComponents/SvgBtn.vue'
     import letterHelper from '../MainComponents/letterHelper.vue'
-    import BtnShell from './Svgs/BtnShell.vue'
-    import LabelSvg from './Svgs/LabelSvg.vue'
-    import PrioritySvg from './Svgs/PrioritySvg.vue'
-    import ReminderSvg from './Svgs/ReminderSvg.vue'
-    import ActiveAdd from '../MainComponents/ActiveAdd.vue'
+    import BtnShell from '../TodayPage/Svgs/BtnShell.vue'
+    import LabelSvg from '../TodayPage/Svgs/LabelSvg.vue'
+    import PrioritySvg from '../TodayPage/Svgs/PrioritySvg.vue'
+    import ReminderSvg from '../TodayPage/Svgs/ReminderSvg.vue'
+    import ActiveAdd from '../MainComponents/ActiveAdd.vue';
     import {useStore} from "../../store";
-    const  store = useStore();
-    function closeTaskBoard(){  
-        store.todayTask = '';
-        store.taskSection = !store.taskSection;
-    }
-    function addTask() {
-        if(store.todayTask){
-            store.todayTasks.push(store.todayTask);
-            store.todayTask =''
-        }
-    }
+    const store = useStore();
+    defineProps(['modelValue','secName']);
+    defineEmits(['cancel', 'addTask']);
+    const attrs = useAttrs();
 </script>
-
 <template>
-    <div class="border w-full rounded-xl md:pl-3 md:pb-2 md:pr-3 md:pt-2">
-        <textarea v-model="store.todayTask" class="border-none md:w-full text-sm outline-none" rows="1" placeholder="Task name"></textarea>
-        <input type="text" class="font-thin text-sm" placeholder="Description">
+    <div v-bind="attrs" class="border w-full rounded-xl md:pl-3 md:pb-2 md:pr-3 md:pt-2">
+        <textarea v-model="store.inboxTask"  class="border-none md:w-full text-sm outline-none" rows="1" placeholder="Task name"></textarea>
+        <input type="text" v-model="store.inboxDescription" class="font-thin text-sm outline-none" placeholder="Description">
         <div class="flex items-center md:mt-5 justify-between">
             <div class="flex items-center">
                 <div>
@@ -35,11 +27,11 @@
                         <template #svg>
                             <hoverBtn>
                                 <TodaySvg/>
-                                <p class="text-green-700 md:ml-0.5 text-sm">Today</p>
+                                <p class="text-green-700 md:ml-0.5 text-sm">Due date</p>
                             </hoverBtn>
                         </template>
                         <template #title>
-                            Today
+                            date
                         </template>
                     </SvgBtn>
                 </div>
@@ -57,8 +49,6 @@
                         </div>
                     </template>
                 </SvgBtn>
-
-
             </div>
             <div class="flex items-center">
                 <SvgBtn width="md:w-28">
@@ -102,8 +92,8 @@
     </div>
     <div class="flex justify-end md:mt-3">
         <div class="flex items-center">
-            <ActiveAdd @click="closeTaskBoard"  class="md:mr-5 cursor-pointer bg-gray-100">Cancel</ActiveAdd>
-            <ActiveAdd @click="addTask" :class="[store.todayTask ? 'cursor-pointer bg-red-700' : 'cursor-not-allowed']" class="bg-red-300 text-white">Add</ActiveAdd>
+            <ActiveAdd @click="$emit('cancel')" class="md:mr-5 cursor-pointer bg-gray-100">Cancel</ActiveAdd>
+            <ActiveAdd @click="$emit('addTask')"  class="bg-red-700 text-white">Add</ActiveAdd>
         </div>
     </div>
 </template>

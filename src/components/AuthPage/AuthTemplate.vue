@@ -19,7 +19,7 @@ const {toSection} = main()
       <p class="text-3xl font-bold md:mt-32">
         <slot name="authSelect"></slot>
       </p>
-      <SelectAcc class="md:mt-10" @click="toSection('/today')">
+      <SelectAcc class="md:mt-10" @click="toSection('/app/today')">
         <template #logo>
           <GoogleSvg />
         </template>

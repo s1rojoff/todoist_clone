@@ -5,11 +5,28 @@ import letterHelper from "../../MainComponents/letterHelper.vue";
 import TodaySvg from "./Svg/todaySvg.vue";
 import UpcomingSvg from "./Svg/upcomingSvg.vue";
 import FilterSvg from "./Svg/filterSvg.vue";
+import projectMain from "./Project/projectMain.vue";
+import modalMain from "./Project/ProjectModal/modalMain.vue";
+import { useStore } from "../../../store";
+const store = useStore();
+function returnTaskCount() {
+  if(store.todayTasks.length > 0){
+    return store.todayTasks.length
+  }
+}
+function allTasks() {
+  if(store.todayTasks.length+store.inboxSecTasks.length + store.inboxMainTasks.length){
+    return store.todayTasks.length+store.inboxSecTasks.length + store.inboxMainTasks.length
+  }
+}
 </script>
 <template>
-  <div class="pl-8 pt-8 w-[300px] h-[100vh] bg-gray-100">
+  <div class="pl-8 pt-8 w-[300px] h-[92.5vh] bg-gray-100 "
+  @mouseenter="store.$state.showPlusSvg=true"
+  @mouseleave="store.$state.showPlusSvg=false"
+  >
     <router-link active-class="active-link" exact-active-class="exact-active-link" to="project">
-      <sidebar-item width="w-[200px]">
+      <sidebar-item width="w-[200px] translate-x-[100px]">
         <template #svg>
           <div class="text-blue-500">
             <inbox-svg></inbox-svg>
@@ -20,10 +37,11 @@ import FilterSvg from "./Svg/filterSvg.vue";
           Go to Inbox <letter-helper>G</letter-helper> then
           <letter-helper>i</letter-helper>
         </template>
+        <template #taskCount>{{allTasks()}}</template>
       </sidebar-item>
     </router-link >
     <router-link active-class="active-link" exact-active-class="exact-active-link" to="today">
-      <sidebar-item width="w-[200px]">
+      <sidebar-item width="w-[200px] translate-x-[100px]">
         <template #svg>
           <div class="text-green-500">
             <TodaySvg />
@@ -34,10 +52,11 @@ import FilterSvg from "./Svg/filterSvg.vue";
           Go to Today <letter-helper>G</letter-helper> then
           <letter-helper>T</letter-helper>
         </template>
+        <template #taskCount>{{returnTaskCount()}}</template>
       </sidebar-item>
     </router-link>
-    <router-link active-class="active-link" exact-active-class="exact-active-link" to="upcoming">
-      <sidebar-item width="w-[200px]">
+    <router-link  to="upcoming">
+      <sidebar-item width="w-[200px] translate-x-[80px]">
         <template #svg>
           <div class="text-purple-700">
             <UpcomingSvg />
@@ -51,7 +70,7 @@ import FilterSvg from "./Svg/filterSvg.vue";
       </sidebar-item>
     </router-link>
     <router-link active-class="active-link" exact-active-class="exact-active-link" to="filters">
-      <sidebar-item width="w-[200px]">
+      <sidebar-item width="w-[200px] translate-x-[70px]">
         <template #svg>
           <div class="text-yellow-500">
             <FilterSvg />
@@ -64,10 +83,16 @@ import FilterSvg from "./Svg/filterSvg.vue";
         </template>
       </sidebar-item>
     </router-link>
+    <div class="mt-5">
+      <project-main></project-main>
+    </div>
+    <div>
+        <modal-main></modal-main>
+    </div>
   </div>
 </template>
 <style>
-      .active {
+      .active-link {
     background-color: rgb(214, 215, 215);
 }
 
