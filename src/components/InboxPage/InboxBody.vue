@@ -43,10 +43,6 @@
         store.inboxTask = '';
         store.inboxDescription= ""
     }
-
-    function cancelInbox() {
-
-    }
     function addTaskInbox() {
         if(store.inboxSecTask_task && store.inboxSecTask_description){
             let inboxSecTask ={
@@ -59,14 +55,14 @@
         store.inboxSecTask_description = '';
         console.log(inboxSecTask);
     }
-    function deleteItem(index) {
-        store.inboxSecTasks.splice(index, 1)
+    function deleteItem(arr,index) {
+        arr.splice(index, 1)
     }
 </script>
 
 <template>
-    <bodyAddTask v-if="!mainTaskBoardShow" class="md:ml-3" @click="mainTaskBoardShow = true"/>
-    <InboxTaskItem class="md:ml-1" v-for="(task, index) in store.inboxMainTasks" :key="index">
+    <bodyAddTask v-show="!mainTaskBoardShow" class="md:ml-3" @click="mainTaskBoardShow = true"/>
+    <InboxTaskItem v-for="(task, index) in store.inboxMainTasks" :key="index" @deleteTask="deleteItem(store.inboxMainTasks,index)">
         {{task.task}}
         <br>
         <p class="text-[11px] text-gray-500 -mt-1">{{task.description}}</p>
@@ -101,10 +97,10 @@
                 </div>
             </div>
             <div v-if="secName">
-                <SectionItem v-if="secName">{{secName}}</SectionItem>
+                <SectionItem v-show="secName">{{secName}}</SectionItem>
                 <bodyAddTask @click="showBoard" v-if="!showTaskBoard" class="md:ml-3 md:mt-3"/>
-                <div v-if="!store.rotateSvg">
-                    <InboxTaskItem  class="md:ml-5" v-for="(task, index) in store.inboxSecTasks" :key="index" @deleteTask="deleteItem(index)">
+                <div v-show="!store.rotateSvg">
+                    <InboxTaskItem  class="md:ml-5" v-for="(task, index) in store.inboxSecTasks" :key="index" @deleteTask="deleteItem(store.inboxSecTasks,index)">
                         {{task.task}} <br>
                         <p class="text-[11px] text-gray-500 -mt-1">{{task.description}}</p>
                     </InboxTaskItem>
