@@ -8,7 +8,7 @@ import AppPage from "../views/AppPage.vue"
 import Inbox from '../views/InboxPage.vue'
 import Today from '../views/Today.vue'
 import Upcoming from '../views/Upcoming.vue'
-import Filters from '../views/Filters.vue'
+import Filters from '../views/FiltersPage.vue'
 import OnBoardPage from '../views/OnBoardPage.vue'
 const router = createRouter({
   history: createWebHistory(),
