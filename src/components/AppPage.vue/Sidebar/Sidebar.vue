@@ -14,6 +14,11 @@ function returnTaskCount() {
     return store.todayTasks.length
   }
 }
+function allTasks() {
+  if(store.todayTasks.length+store.inboxSecTasks.length + store.inboxMainTasks.length){
+    return store.todayTasks.length+store.inboxSecTasks.length + store.inboxMainTasks.length
+  }
+}
 </script>
 <template>
   <div class="pl-8 pt-8 w-[300px] h-[92.5vh] bg-gray-100 "
@@ -32,6 +37,7 @@ function returnTaskCount() {
           Go to Inbox <letter-helper>G</letter-helper> then
           <letter-helper>i</letter-helper>
         </template>
+        <template #taskCount>{{allTasks()}}</template>
       </sidebar-item>
     </router-link >
     <router-link active-class="active-link" exact-active-class="exact-active-link" to="today">
