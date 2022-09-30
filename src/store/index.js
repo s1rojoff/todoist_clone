@@ -28,102 +28,102 @@ export const useStore = defineStore("store", {
       colors: [
         {
           id: 1,
-          color: "#b8255f",
+          color: "bg-red-700",
           Name: "Berry Red",
         },
         {
           id: 2,
-          color: "#db4035",
+          color: "bg-red-600",
           Name: "Red",
         },
         {
           id: 3,
-          color: "#ff9d3a",
+          color: "bg-orange-300",
           Name: "Orange",
         },
         {
           id: 4,
-          color: "#fad000",
+          color: "bg-yellow-400",
           Name: "Yellow",
         },
         {
           id: 5,
-          color: "#afb83b",
+          color: "bg-lime-400",
           Name: "Olive Green ",
         },
         {
           id: 6,
-          color: "#7ecc49",
+          color: "bg-lime-600",
           Name: "Lime Green ",
         },
         {
           id: 6,
-          color: "#299438",
+          color: "bg-green-600",
           Name: "Green ",
         },
         {
           id: 7,
-          color: "#6accbc",
+          color: "bg-green-400",
           Name: "Mint Green ",
         },
         {
           id: 8,
-          color: "#158fad",
+          color: "bg-teal-600",
           Name: "Teal ",
         },
         {
           id: 9,
-          color: "#14aaf5",
+          color: "bg-sky-500",
           Name: "Sky Blue ",
         },
         {
           id: 10,
-          color: "#96c3eb",
+          color: "bg-blue-600",
           Name: "Light Blue  ",
         },
         {
           id: 11,
-          color: "#4073ff",
+          color: "bg-blue-700 ",
           Name: "Blue  ",
         },
         {
           id: 12,
-          color: "#884dff",
+          color: "bg-violet-500",
           Name: "Grape  ",
         },
         {
           id: 13,
-          color: "#af38eb",
+          color: "bg-violet-800",
           Name: "Violet",
         },
         {
           id: 14,
-          color: "#eb96eb",
+          color: "bg-purple-400",
           Name: "Lavender",
         },
         {
           id: 15,
-          color: "#e05194",
+          color: "bg-pink-400",
           Name: "Magenta",
         },
         {
           id: 16,
-          color: "#ff8d85",
+          color: "bg-rose-300",
           Name: "Salmon",
         },
         {
           id: 17,
-          color: "#808080",
+          color: "bg-stone-500",
           Name: "Charcoal",
         },
         {
           id: 18,
-          color: "#b8b8b8",
+          color: "bg-stone-400",
           Name: "Gray",
         },
         {
           id: 19,
-          color: "#ccac93",
+          color: "bg-amber-700",
           Name: "Taupe",
         },
       ],
@@ -140,7 +140,17 @@ export const useStore = defineStore("store", {
       inboxSecTask_description: '',
       inboxMainTasks: [],
       inboxTask: '',
-      inboxDescription: ''
+      inboxDescription: '',
+      inboxSecTask :{
+        task: '',
+        description: ''
+      },
+      showBlock : false,
+      Items : [],
+      item : {
+        name: "",
+        color: ""
+      }
     };
   },
 })

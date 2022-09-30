@@ -4,26 +4,32 @@ import colorsName from "./colorsName.vue";
 import ColorsName from "./colorsName.vue";
 import {useStore} from "../../../../../store"
 const store = useStore()
-let showBlock = ref("false");
+store.$state.showBlock 
 var colorName = reactive("")
 const btn = ref("")
+let colorValue = ref("")
 function ReturnColor(a) {
   colorName = store.$state.colors.at(a)
   btn.value.innerHTML =  colorName.Name
+  colorValue.value = colorName.color
+  store.$state.item.color = colorName.color
+  store.$state.showBlock=false
+  console.log(store.$state.item);
+  console.log(store.$state.Items);
 }
 </script>
 <template>
-  <div class="relative">
+  <div>
     <button
-      ref="btn"
       class="border-gray-300 border-2 w-full flex py-[2px]"
-      @click="showBlock = !showBlock"
+      @click="store.$state.showBlock = !store.$state.showBlock"
     >
-    Choose color
+    <div class="w-3 h-3 rounded-full mx-3 mt-[5px]" :class="colorValue"></div>
+     <div ref="btn">Choose color</div>
     </button>
     <div
-      class="w-full h-[300px] overflow-y-scroll bg-white absolute"
-      v-show="showBlock"
+      class="w-full h-[300px] overflow-y-scroll bg-white"
+      v-show="store.$state.showBlock"
     >
       <div class="px-5">
         <div

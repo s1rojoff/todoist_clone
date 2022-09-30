@@ -42,8 +42,8 @@ let rotateSvg = ref(false);
       </div>
     </div>
     <ul>
-        <li>
-            <project-item color="red-900" msg="sanjxsain"></project-item>
+        <li v-for="task in store.$state.Items" :key="task.name">
+            <project-item :color="task.color" :msg="task.name"></project-item>
         </li>
     </ul>
   </div>

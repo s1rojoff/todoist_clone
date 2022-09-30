@@ -7,7 +7,7 @@ const props = defineProps(['color','msg'])
 <template>
   <div class="flex justify-between">
     <div class="flex w-[400px]">
-      <div class="w-3 h-3 rounded-full mr-3 mt-2" :class="'bg-'+ color"></div>
+      <div class="w-3 h-3 rounded-full mr-3 mt-2" :class="color"></div>
       <div>
         <p>{{ msg }}</p>
       </div>
