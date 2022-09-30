@@ -13,20 +13,12 @@ import NavInput from "./navInput.vue";
 import { useStore } from "../../../store";
 import { ref } from "@vue/reactivity";
 const store = useStore()
-const ClickM = ref("")
-
-function keyboardEvent (e) {
-    if (e.keyCode === 77) {
-      store.$state.showSidebar = !store.$state.showSidebar
-    }
-  }
-  window.addEventListener('keyup', keyboardEvent)
 </script>
 <template>
   <nav>
     <div class="w-full px-14 py-2 bg-red-600 flex justify-between">
       <div class="flex">
-        <div ref="ClickM" class="mr-2 ">
+        <div  class="mr-2 ">
           <svg-btn width="w-[100px]">
             <template #svg>
               <menu-svg />

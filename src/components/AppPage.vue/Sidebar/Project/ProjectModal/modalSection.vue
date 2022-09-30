@@ -7,15 +7,22 @@ import SelectView from "./SelectView.vue";
 import BaseBtn from "../../../../MainComponents/BaseBtn.vue";
 import { useStore } from "../../../../../store";
 const store = useStore();
+let item = {
+  color: "",
+  name: "",
+};
 function addProject() {
   if (store.$state.item.color && store.$state.item.name) {
-    let item ={
-      color : store.$state.item.color,
-      name : store.$state.item.name,
-    }
+      item = {
+      color: store.$state.item.color,
+      name: store.$state.item.name,
+    };
     store.$state.Items.push(item);
+    store.$state.showModal = false;
   }
 }
+item.color = "";
+item.name = "";
 </script>
 <template>
   <div class="bg-white w-[500px] rounded-xl">

@@ -6,7 +6,7 @@ const props = defineProps(["width"]);
 <template>
   <div
     class="relative"
-    @mouseenter=" titleShow = true"
+    @mouseenter.self=" titleShow = true"
     @mouseleave="titleShow = false "
   >
     <button
