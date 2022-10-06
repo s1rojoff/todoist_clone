@@ -92,7 +92,7 @@ const store = useStore()
                 <img
                   src="../../../../public/img/apps-illustrations.webp"
                   alt=""
-                  class="w-9 rounded-full"
+                  class="w-9 scale-120 rounded-full"
                 />
               </template>
               <template #title>

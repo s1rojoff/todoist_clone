@@ -1,8 +1,9 @@
 <script setup>
-    import FilterMain from './FilterTitle.vue'
+    import FilterTitle from './FilterTitle.vue'
     import FilterBody from './FilterBody.vue'
 </script>
 
 <template>
-    <FilterMain/>
+    <FilterTitle/>
+    <FilterBody/>
 </template>
